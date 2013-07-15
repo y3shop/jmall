@@ -1,14 +1,10 @@
 /.settings
-/.project
 /jmall-common/.settings
-/jmall-common/target
 /jmall-common/.classpath
-/jmall-common/.project
+/jmall-common/target
 /jmall-core/.settings
-/jmall-core/target
 /jmall-core/.classpath
-/jmall-core/.project
+/jmall-core/target
 /jmall-web/.settings
-/jmall-web/target
 /jmall-web/.classpath
-/jmall-web/.project
+/jmall-web/target
