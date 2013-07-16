@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.javasoft.mapper.TestMapper"> 
+	<resultMap type="com.javasoft.model.TestModel" id="TestModel">
+		<result column="T_ID" property="id" jdbcType="VARCHAR"/>
+		<result column="T_CREATE_TIME" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="T_CREATOR" property="creator" jdbcType="VARCHAR"/>
+		<result column="T_USER_NAME" property="userName" jdbcType="VARCHAR"/>
+		<result column="T_IS_TRUE" property="isTrue" jdbcType="BIT"/>
+		<result column="T_AGE" property="age" jdbcType="INTEGER"/>
+		<result column="T_AMOUNT" property="amount" jdbcType="DECIMAL"/>
+	</resultMap>
+	<sql id="baseResult">
+		T_ID, T_CREATE_TIME, T_CREATOR, T_USER_NAME, T_IS_TRUE, T_AGE, T_AMOUNT
+    </sql>
+
+	<select id="queryModelById" parameterType="java.lang.String" resultMap="TestModel">
+		select <include refid="baseResult"/>
+		from T_TEST where T_ID=#{id,jdbcType=VARCHAR}
+    	</select>
+
+	<select id="queryModel" parameterType="java.lang.String" resultMap="TestModel">
+		select <include refid="baseResult"/>
+		from T_TEST
+	</select>
+
+	<insert id="insertSelector" parameterType="com.javasoft.model.TestModel">
+		insert into T_TEST
+		<trim prefix="(" suffix=")" suffixOverrides=",">  
+			<if test="id != null">
+				T_ID,
+			</if>
+			<if test="createTime != null">
+				T_CREATE_TIME,
+			</if>
+			<if test="creator != null">
+				T_CREATOR,
+			</if>
+			<if test="userName != null">
+				T_USER_NAME,
+			</if>
+			<if test="isTrue != null">
+				T_IS_TRUE,
+			</if>
+			<if test="age != null">
+				T_AGE,
+			</if>
+			<if test="amount != null">
+				T_AMOUNT,
+			</if>
+
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=","> 
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIME},
+			</if>
+			<if test="creator != null">
+				#{creator,jdbcType=VARCHAR},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="isTrue != null">
+				#{isTrue,jdbcType=BIT},
+			</if>
+			<if test="age != null">
+				#{age,jdbcType=INTEGER},
+			</if>
+			<if test="amount != null">
+				#{amount,jdbcType=DECIMAL},
+			</if>
+
+		</trim>
+	</insert>
+</mapper>

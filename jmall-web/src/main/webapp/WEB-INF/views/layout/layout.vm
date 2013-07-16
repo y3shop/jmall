@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>$!page_title</title>
+<script type="text/javascript" src="template/common/js/jquery.js"></script>
+</head>
+<body>
+ 
+<table border="1" style="border-collapse: collapse;" cellpadding="2" cellspacing="2" align="center" width="800">    <tbody><tr>
+        <td height="30" colspan="2">#parse('layout/header.vm')</td>
+    </tr>
+    <tr>
+        <td width="150" height="450" valign="top">
+
+         #parse('layout/navigation.vm')
+ 
+        </td>
+        <td valign="top" width="650">
+        
+ 			$screen_content
+
+        </td>
+    </tr>
+    <tr>
+        <td height="30" colspan="2">
+
+ 			#parse('layout/footer.vm')
+ 			
+        </td>
+    </tr>
+</tbody></table></body>
+</html>

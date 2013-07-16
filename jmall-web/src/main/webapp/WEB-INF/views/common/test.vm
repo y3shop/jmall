@@ -1,0 +1,53 @@
+#set($page_title="Layout Test")
+#set($layout = "layout/layout.vm")  
+测试页面<p/>
+<a href="test/list.do">test/list</a><br/>
+<a href="test/m_list.do">test/m_list.do</a><br/>
+<a href="test1/m_list_1.do">重定向test/m_list_1</a><br/>
+<a href="test/m_list_2/vv.do">test/m_list_2/{urlParam}</a><br/>
+<a href="test/m_list_3.do">test/m_list_3参数重定向</a><br/>
+<input type="button" id="stringId" value="ajax返回字符串"/>
+<input type="button" id="jsonId" value="ajax返回json"/>
+<input type="button" id="responseJsonId" value="response ajax返回json"/>
+$!getBasePath()
+<script type="text/javascript">
+$().ready(function() {
+	$('#stringId').click(function() {
+		jQuery.ajax({
+			type:"POST",
+			url:"test/m_list_4.do",
+			data:"name=hxx&age=22",
+			success:function(msg) {
+				alert(msg);
+			}
+		});
+	});
+	
+	$('#jsonId').click(function() {
+		jQuery.ajax({
+			type:"POST",
+			url:"test/m_list_6.do",
+			data:"name=hxx&age=22",
+			success:function(msg) {
+				alert(msg);
+			}
+		});
+	});
+	
+	$('#responseJsonId').click(function() {
+		jQuery.ajax({
+			type:"POST",
+			url:"test/m_list_5.do",
+			data:"name=hxx&age=22",
+			success:function(msg) {
+				alert(msg);
+			}
+		});
+	});
+});
+</script>
+
+
+
+
+	
