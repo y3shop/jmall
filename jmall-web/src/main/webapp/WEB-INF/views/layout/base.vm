@@ -1,0 +1,4 @@
+#set($contextPath = "")
+#set($cssBasePath = "")
+#set($scriptBasePath = "")
+#set($imageBasePath = "")

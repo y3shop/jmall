@@ -1,0 +1,2 @@
+#set($layout = "layout/nolayout.vm")  
+login success<a href="main.do">main.do</a>

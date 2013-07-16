@@ -1,0 +1,9 @@
+<html>
+<body>
+<h2>Hello World!fffff</h2>
+Welcome back, ${authz.principal}!
+    #if($authz.allGranted("ROLE_MODEL","ROLE_PLAYING")) 
+         blah blah blah blah blah
+    #end
+</body>
+</html>

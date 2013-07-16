@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>$!page_title - Powered By JAVASOFT</title>
+<meta name="Author" content="JAVASOFT Team" />
+<meta name="Copyright" content="JAVASOFT" />
+<base href="$!getBasePath()">  
+##<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link href="/template/admin/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/template/admin/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/common/js/jquery.js"></script>
+<script type="text/javascript" src="/template/common/js/jquery.pager.js"></script>
+<script type="text/javascript" src="/template/admin/js/base.js"></script>
+<script type="text/javascript" src="/template/admin/js/admin.js"></script>
+</head>
+<body class="list">
+	<div class="bar">
+		$!page_title &nbsp;总记录数: $!pager.totalCount (共$!pager.pageCount页)
+	</div>
+	<div class="body">
+		<form id="listForm" action="$!list_form_action" method="post">
+			$screen_content
+			<div class="pagerBar">
+				<div class="delete">
+						<input type="button" id="deleteButton" class="formButton" url="$!delete_form_action" value="删 除" disabled hidefocus />
+				</div>
+				<div class="pager">
+					#parse('layout/pager.vm')
+				</div>
+			<div>
+			#if ($!modelList.size() == 0)
+				<div class="noRecord">没有找到任何记录!</div>
+			#end
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+#set($layout = "layout/nolayout.vm")  
+login fail   用户名和密码你是不是乱填的啊....你确定你是我接的商户吗？黑客???。。。。

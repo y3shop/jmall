@@ -12,6 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jmall.version>1.0.0-SNAPSHOT</jmall.version>
+    <javasoft.version>1.0.0</javasoft.version>
   </properties>
 
   <dependencies>

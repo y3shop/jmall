@@ -13,9 +13,151 @@
   <packaging>war</packaging>
   <name>jmall-web Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<jmall.version>1.0-SNAPSHOT</jmall.version>
+  	<javasoft.version>1.0.0</javasoft.version>
+  </properties>
+  
   <dependencies>
-  </dependencies>
-  <build>
-    <finalName>jmall-web</finalName>
-  </build>
+		<dependency>
+			<groupId>org.cloudfoundry</groupId>
+			<artifactId>cloudfoundry-runtime</artifactId>
+			<version>0.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>0.9.30</version>
+		</dependency>
+		<dependency>
+			<groupId>com.logentries</groupId>
+			<artifactId>logentries-appender</artifactId>
+			<version>1.1.15</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.javasoft</groupId>
+			<artifactId>javasoft-baseweb</artifactId>
+			<version>${javasoft.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.javasoft</groupId>
+			<artifactId>jmall-core</artifactId>
+			<version>${jmall.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- 使用tomcat插件 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<port>8088</port>
+					<path>/</path>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.roki.mybatis</groupId>
+				<artifactId>mybatis-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<!-- 建议初始化工程的时候全部注释，自动生成代码时开启，防止代码及配置文件恢复原始状态 -->
+					<mybatisModelsOpen>true</mybatisModelsOpen>
+
+					<!-- 创建mybatis的xml文件 -->
+					<modelBasePackage>com.roki.model</modelBasePackage>
+					<mybatisModels>TempleModel</mybatisModels>
+
+					<!-- 创建Mapper接口 -->
+					<mapperBasePackage>com.roki.mapper</mapperBasePackage>
+
+					<!-- 创建controller -->
+					<controllerBasePackage>com.roki.controller.admin</controllerBasePackage>
+
+					<!-- 创建service -->
+					<serviceBasePackage>com.roki.controller.service</serviceBasePackage>
+
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<filters>
+			<filter>src/main/filters/${env}.properties</filter>
+		</filters>
+
+		<!-- default:src/main/java -->
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<!-- default:src/main/resources -->
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+		<!-- default:src/test/java -->
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<testResources>
+			<testResource>
+				<!-- default:src/main/resources -->
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+		<!-- default:target/classes -->
+		<outputDirectory>target/classes</outputDirectory>
+		<!-- default:target/test-classes -->
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+
+		<finalName>ROOT</finalName>
+	</build>
+
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>dev-filter</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>prd</id>
+			<properties>
+				<env>prd-filter</env>
+			</properties>
+			<!-- <properties> <maven.webapp.directory></maven.webapp.directory> </properties> -->
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!-- additional repository declarations -->
+	</repositories>
 </project>

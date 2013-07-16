@@ -1,0 +1,2 @@
+#set($layout = "layout/nolayout.vm")  
+系统异常，请联系管理员...给您带来的不便，请谅解，我们将会尽快修复bug。

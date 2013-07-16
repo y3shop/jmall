@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+#set($layout = "layout/nolayout.vm")  
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>管理中心 - Powered By JAVASOFT</title>
+<meta name="Author" content="JAVASOFT Team" />
+<meta name="Copyright" content="JAVASOFT" />
+<base href="$!getBasePath()">  
+##<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link href="/template/admin/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/template/admin/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="login">
+	<script type="text/javascript">
+
+		// 登录页面若在框架内，则跳出框架
+		if (self != top) {
+			top.location = self.location;
+		};
+	</script>
+	<div class="blank"></div>
+	<div class="blank"></div>
+	<div class="blank"></div>
+	<div class="body">
+		<form id="loginForm" action="/j_spring_security_check" method="post">
+            <table class="loginTable">
+            	<tr>
+            		<td rowspan="3">
+            			##<img src="/template/admin/images/login_logo.gif" alt="SHOP++管理中心" />
+            		</td>
+                    <th>
+                    	用户名:
+                    </th>
+					<td>
+                    	<input type="text" id="username" name="j_username" class="formText" />
+                    </td>
+                </tr>
+                <tr>
+					<th>
+						密&nbsp;&nbsp;&nbsp;码:
+					</th>
+                    <td>
+                    	<input type="password" id="password" name="j_password" class="formText" />
+                    </td>
+                </tr>
+               #* <tr>
+                	<th>
+                		验证码:
+                	</th>
+                    <td>
+                    	<input type="text" id="captcha" name="j_captcha" class="formText captcha" />
+                   		<img id="captchaImage" class="captchaImage" src="/captcha.jpeg" alt="换一张" />
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+                		&nbsp;
+                	</td>
+                	<th>
+                		&nbsp;
+                	</th>
+                    <td>
+                    	<label>
+                    		<input type="checkbox" id="isRememberUsername" />&nbsp;记住用户名
+                    	</label>
+                    </td>
+                </tr>**#
+                <tr>
+                	<td>
+                		&nbsp;
+                	</td>
+                	<th>
+                		&nbsp;
+                	</th>
+                    <td>
+                       ## <input type="button" class="homeButton" value="" onclick="window.open('<%=base%>/')" hidefocus />
+						<input type="submit" class="submitButton" value="登 录" hidefocus />
+                    </td>
+                </tr>
+            </table>
+            <div class="powered">
+            	COPYRIGHT © 2013-2014 HUANGXIONGXING ALL RIGHTS RESERVED.
+            </div>
+            
+        </form>
+	</div>
+</body>
+</html>
+

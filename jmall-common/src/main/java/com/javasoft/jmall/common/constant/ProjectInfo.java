@@ -4,14 +4,14 @@
  * Copyright (c) 2013 - 2014.版权所有
  * 代码由黄雄星独立完成。注意：如需使用项目代码需经本人同意方可使用。
  ******************************************************************************/
-package com.javasoft.jmall.common.util;
+package com.javasoft.jmall.common.constant;
 
 /**
  * <P>TODO</P>
  * 
  * 黄雄星(13077862552,420484141@qq.com)
  */
-public interface ProductInfo {
+public interface ProjectInfo {
 
-	String PRODUCT_INFO = "jmall";
+	String PRO_INFO = "jmall";
 }

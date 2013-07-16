@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/template/common/editor/themes/default/default.css" />
+<link rel="stylesheet" href="/template/common/editor/plugins/code/prettify.css" />
+<script type="text/javascript" src="/template/common/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/template/common/editor/zh_CN.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/code/prettify.js"></script>
+
+
+<script charset="utf-8" src="/template/common/editor/plugins/baidumap/baidumap.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/emoticons/emoticons.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/anchor/anchor.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/autoheight/autoheight.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/clearhtml/clearhtml.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/filemanager/filemanager.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/flash/flash.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/image/image.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/insertfile/insertfile.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/lineheight/lineheight.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/link/link.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/media/media.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/multiimage/multiimage.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/pagebreak/pagebreak.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/plainpaste/plainpaste.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/preview/preview.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/quickformat/quickformat.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/table/table.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/template/template.js"></script>
+<script charset="utf-8" src="/template/common/editor/plugins/wordpaste/wordpaste.js"></script>
