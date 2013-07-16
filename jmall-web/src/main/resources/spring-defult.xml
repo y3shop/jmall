@@ -9,27 +9,28 @@
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<context:annotation-config />
-	
-	
+
+
 	<context:component-scan base-package="com.javasoft.*.service" />
 
-<!-- 	<import resource="classpath*:spring-security.xml" /> -->
-<!-- 	<import resource="classpath*:spring-mybatits.xml" /> -->
+	<!-- <import resource="classpath*:spring-security.xml" /> -->
+	<!-- <import resource="classpath*:spring-mybatits.xml" /> -->
 	<import resource="classpath*:springmvc-servlet.xml" />
-<!-- 	<import resource="classpath*:spring-cache.xml" /> -->
-<!-- 	<import resource="classpath*:spring-mongodb.xml" /> -->
-	
-	
-	<!-- 定义上下文返回的消息的国际化。 -->  
- <bean id="messageSource"  
-  class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
-  <property name="basename"  
-   value="classpath:org/springframework/security/messages_zh_CN"/>  
- </bean>  
- 
-  <!--   事件监听:实现了 ApplicationListener监听接口，包括AuthenticationCredentialsNotFoundEvent 事件，  
-  AuthorizationFailureEvent事件，AuthorizedEvent事件， PublicInvocationEvent事件 -->  
-<!--  <bean  class="org.springframework.security.authentication.event.LoggerListener" />   -->
+	<!-- <import resource="classpath*:spring-cache.xml" /> -->
+	<!-- <import resource="classpath*:spring-mongodb.xml" /> -->
+
+
+	<!-- 定义上下文返回的消息的国际化。 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename"
+			value="classpath:org/springframework/security/messages_zh_CN" />
+	</bean>
+
+	<!-- 事件监听:实现了 ApplicationListener监听接口，包括AuthenticationCredentialsNotFoundEvent 
+		事件， AuthorizationFailureEvent事件，AuthorizedEvent事件， PublicInvocationEvent事件 -->
+	<!-- <bean class="org.springframework.security.authentication.event.LoggerListener" 
+		/> -->
 
 
 

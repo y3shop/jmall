@@ -80,10 +80,4 @@ public interface RequestUrl {
 	String RESOURCE_UPDATE_URL = ADMIN_PREFIX + "resource_update";
 	String RESOURCE_DELETE_URL = ADMIN_PREFIX + "resource_delete";
 
-	/********* 菜单管理 ***************/
-	String MENU_ADMIN_URL = ADMIN_PREFIX + "menu_admin";
-	String MENU_PAGE_URL = ADMIN_PREFIX + "menu_page";
-	String MENU_MERCHAN_URL = ADMIN_PREFIX + "menu_merchant";
-	String MENU_FILE_URL = ADMIN_PREFIX + "menu_file";
-
 }
