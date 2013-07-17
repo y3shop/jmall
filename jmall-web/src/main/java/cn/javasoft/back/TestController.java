@@ -4,7 +4,7 @@
  * Copyright (c) 2013 - 2014.版权所有
  * 代码由黄雄星独立完成。注意：如需使用项目代码需经本人同意方可使用。
  ******************************************************************************/
-package com.javasoft.back.controller;
+package cn.javasoft.back;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,8 +12,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,12 +21,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import cn.javasoft.common.constant.RequestUrl;
+import cn.javasoft.common.constant.ResponseView;
+import cn.javasoft.jmall.common.constant.ProjectInfo;
+
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.JSONSerializer;
-import com.javasoft.back.service.TestService;
-import com.javasoft.common.constant.RequestUrl;
-import com.javasoft.common.constant.ResponseView;
-import com.javasoft.jmall.common.constant.ProjectInfo;
 
 /**
  * <P>springmvc框架示例</P>
@@ -37,10 +35,6 @@ import com.javasoft.jmall.common.constant.ProjectInfo;
  */
 @Controller(ProjectInfo.PRO_INFO + "TestController")
 public class TestController {
-
-	@Autowired
-	@Qualifier(ProjectInfo.PRO_INFO + "TestService")
-	private transient TestService testService;
 
 	@RequestMapping(value = RequestUrl.TEST_URL, method = RequestMethod.GET)
 	public String test() {
@@ -54,7 +48,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/list.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test/list", method = RequestMethod.GET)
 	public ModelAndView list() {
 		List<String> list = new ArrayList<String>();
 		list.add("aa");
@@ -71,7 +65,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test/m_list", method = RequestMethod.GET)
 	public String m_list(ModelMap modelMap) {
 		List<String> list = new ArrayList<String>();
 		list.add("aa");
@@ -87,7 +81,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test1/m_list_1.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test1/m_list_1", method = RequestMethod.GET)
 	public String m_list_1(ModelMap modelMap) {
 		List<String> list = new ArrayList<String>();
 		list.add("aa");
@@ -102,7 +96,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_2/{urlParam}.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test/m_list_2/{urlParam}", method = RequestMethod.GET)
 	public ModelAndView m_list_2(@PathVariable String urlParam) {
 		List<String> list = new ArrayList<String>();
 		ModelAndView modelAndView = new ModelAndView("test/test");
@@ -118,7 +112,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_3.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test/m_list_3", method = RequestMethod.GET)
 	public String m_list_3(ModelMap modelMap) {
 		return "redirect:../test/m_list_2/woshicanshu.do";
 	}
@@ -133,7 +127,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_4.html", method = RequestMethod.POST)
+	@RequestMapping(value = "test/m_list_4", method = RequestMethod.POST)
 	public @ResponseBody
 	String m_list_4(ModelMap modelMap, @RequestParam String name, @RequestParam int age) {
 		return "hh\"name\":" + name + ",\"age\":" + age + "hh";
@@ -149,7 +143,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_6.html", method = RequestMethod.POST)
+	@RequestMapping(value = "test/m_list_6", method = RequestMethod.POST)
 	@ResponseBody
 	public String m_list_6(ModelMap modelMap, @RequestParam String name, @RequestParam int age) {
 		TestModel model = new TestModel();
@@ -165,7 +159,7 @@ public class TestController {
 	 * @return
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_8.html", method = RequestMethod.GET)
+	@RequestMapping(value = "test/m_list_8", method = RequestMethod.GET)
 	public String m_list_8() {
 		return "redirect:test/test";
 	}
@@ -181,7 +175,7 @@ public class TestController {
 	 * @throws IOException
 	 * 
 	 */
-	@RequestMapping(value = "test/m_list_5.html", method = RequestMethod.POST)
+	@RequestMapping(value = "test/m_list_5", method = RequestMethod.POST)
 	@ResponseBody
 	public void m_list_5(ModelMap modelMap, @RequestParam String name, @RequestParam int age,
 			HttpServletResponse response) throws IOException {

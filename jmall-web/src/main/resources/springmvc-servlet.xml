@@ -11,7 +11,7 @@
 
 	<import resource="classpath*:springmvc-velocity-servlet.xml" />
 	
-	<context:component-scan base-package="com.javasoft.*.controller" />
+	<context:component-scan base-package="cn.javasoft.*.controller" />
 	
 
     <mvc:resources mapping="/template/admin/css/**" location="/template/admin/css/" cache-period="20130306"/>  

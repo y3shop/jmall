@@ -1,7 +1,7 @@
 /**
  * 此代码由黄雄星独立完成，如需使用请经过本人同意。版权所有，侵权必究
  */
-package com.javasoft.common.constant;
+package cn.javasoft.common.constant;
 
 /**
  * @author huangxiongxing
