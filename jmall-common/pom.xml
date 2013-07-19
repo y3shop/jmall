@@ -4,25 +4,30 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.javasoft</groupId>
-		<artifactId>javasoft-parent</artifactId>
+		<groupId>cn.javasoft</groupId>
+		<artifactId>jmall</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jmall-common</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>${jmall.version}</version>
 	<packaging>jar</packaging>
 	<name>jmall-common</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.0</version>
-			<scope>test</scope>
+			<groupId>cn.javasoft</groupId>
+			<artifactId>javasoft-parent</artifactId>
+			<version>${javasoft.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>cn.javasoft</groupId>
+			<artifactId>javasoft-baseweb</artifactId>
+			<version>${javasoft.baseweb.version}</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
