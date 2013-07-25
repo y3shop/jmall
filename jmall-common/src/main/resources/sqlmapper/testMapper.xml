@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="com.javasoft.mapper.TestMapper"> 
-	<resultMap type="com.javasoft.model.TestModel" id="TestModel">
+<mapper namespace="cn.javasoft.jmall.common.mapper.TestMapper"> 
+	<resultMap type="cn.javasoft.jmall.common.model.TestModel" id="TestModel">
 		<result column="T_ID" property="id" jdbcType="VARCHAR"/>
 		<result column="T_CREATE_TIME" property="createTime" jdbcType="TIMESTAMP"/>
 		<result column="T_CREATOR" property="creator" jdbcType="VARCHAR"/>
@@ -24,7 +24,7 @@
 		from T_TEST
 	</select>
 
-	<insert id="insertSelector" parameterType="com.javasoft.model.TestModel">
+	<insert id="insertSelector" parameterType="cn.javasoft.jmall.common.model.TestModel">
 		insert into T_TEST
 		<trim prefix="(" suffix=")" suffixOverrides=",">  
 			<if test="id != null">
@@ -55,7 +55,7 @@
 				#{id,jdbcType=VARCHAR},
 			</if>
 			<if test="createTime != null">
-				#{createTime,jdbcType=TIME},
+				#{createTime,jdbcType=TIMESTAMP},
 			</if>
 			<if test="creator != null">
 				#{creator,jdbcType=VARCHAR},

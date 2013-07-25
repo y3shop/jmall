@@ -35,11 +35,6 @@
 
 		<dependency>
 			<groupId>cn.javasoft</groupId>
-			<artifactId>javasoft-baseweb</artifactId>
-			<version>${javasoft.baseweb.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.javasoft</groupId>
 			<artifactId>jmall-core</artifactId>
 			<version>${jmall.version}</version>
 		</dependency>

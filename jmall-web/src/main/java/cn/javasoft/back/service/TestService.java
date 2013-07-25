@@ -6,9 +6,14 @@
  ******************************************************************************/
 package cn.javasoft.back.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import cn.javasoft.BaseDBService;
 import cn.javasoft.jmall.common.constant.ProjectInfo;
+import cn.javasoft.jmall.common.mapper.TestMapper;
+import cn.javasoft.jmall.common.model.TestModel;
 
 /**
  * <P>TODO</P>
@@ -16,6 +21,12 @@ import cn.javasoft.jmall.common.constant.ProjectInfo;
  * 黄雄星(13077862552,420484141@qq.com)
  */
 @Service(ProjectInfo.PRO_INFO + "TestService")
-public class TestService {
+public class TestService extends BaseDBService<TestModel> {
+
+	@Autowired
+	@Qualifier(ProjectInfo.PRO_INFO + "TestMapper")
+	public void setTestMapper(TestMapper testMapper) {
+		super.setBaseMapper(testMapper);
+	}
 
 }

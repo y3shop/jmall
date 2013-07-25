@@ -20,6 +20,12 @@
 			<artifactId>javasoft-parent</artifactId>
 			<version>${javasoft.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>cn.javasoft</groupId>
+			<artifactId>javasoft-baseweb</artifactId>
+			<version>${javasoft.baseweb.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
