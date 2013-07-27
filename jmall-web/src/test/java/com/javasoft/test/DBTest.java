@@ -5,6 +5,7 @@ package com.javasoft.test;
  */
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,6 +17,8 @@ import org.testng.annotations.Test;
 import cn.javasoft.back.service.TestService;
 import cn.javasoft.jmall.common.constant.ProjectInfo;
 import cn.javasoft.jmall.common.model.TestModel;
+import cn.javasoft.security.mapper.UserMapper;
+import cn.javasoft.security.model.UserModel;
 
 /**
  * @author huangxiongxing
@@ -27,6 +30,10 @@ public class DBTest extends BaseTest {
 	@Qualifier(ProjectInfo.PRO_INFO + "TestService")
 	private transient TestService testService;
 
+	@Autowired
+	@Qualifier("UserMapper")
+	private transient UserMapper userMapper;
+
 	@Test
 	public void testAdd() {
 		TestModel model = new TestModel();
@@ -36,6 +43,13 @@ public class DBTest extends BaseTest {
 		testService.save(model);
 
 		TestModel sModel = testService.selectAllById(model.getId());
+		System.out.println(sModel);
+	}
+
+	@Test
+	public void testAddUser() {
+
+		List<UserModel> sModel = userMapper.queryModel();
 		System.out.println(sModel);
 	}
 
